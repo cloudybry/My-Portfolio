@@ -39,9 +39,3 @@
 ##  License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
-
-##  Live Demo
-
-Visit the live site: [brydevs.netlify.app](https://brydevs.netlify.app)
