@@ -15,15 +15,20 @@
 
 ### Project Description  
  
- Terraform-localstack |  Infrastructure showcase using Terraform & Localstack 
+ Terraform-localstack  
+        Infrastructure showcase using Terraform & Localstack 
  
- Job Track            |  Job application tracker with modular UI         
+ Job Track            
+        Job application tracker with modular UI         
  
- Metric Pulse         |  Metrics dashboard with animated visualizations 
+ Metric Pulse          
+        Metrics dashboard with animated visualizations 
  
- Book Base            |  Book catalog app with search and filter logic  
+ Book Base             
+        Book catalog app with search and filter logic  
  
- Mind Mesh            |  Mind mapping tool with dynamic node rendering   
+ Mind Mesh            
+        Mind mapping tool with dynamic node rendering   
 
 
 ##  License
