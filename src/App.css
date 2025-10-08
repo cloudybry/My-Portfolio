@@ -1,0 +1,301 @@
+/* src/App.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-purple: #2168c4;
+  --neon-pink: #ff2d95;
+  --neon-blue: #003cff;
+  --terminal-green: #00ff9f;
+  --glow-shadow: 0 0 8px var(--accent-purple), 0 0 16px var(--neon-blue);
+}
+
+body {
+ margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #e0e0e0;
+  background-color: #121212;
+  background-image: url('/J4o.gif'); /* ✅ Correct path from public folder */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-text-size-adjust: 100%;
+  text-align: center;
+
+
+}
+
+/* Centered container */
+.container {
+  width: 100%;
+  max-width: 1116px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Shift container slightly to the right on desktop screens */
+@media (min-width: 1024px) {
+  .container {
+    transform: translateX(400px);
+  }
+}
+
+/* Hero section */
+.hero {
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--accent-purple);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+}
+
+/* Call-to-action button */
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--neon-blue));
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: var(--glow-shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--neon-pink), 0 0 24px var(--neon-blue);
+}
+
+
+
+/* Section styling */
+.about,
+.projects {
+  margin-top: 40px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  width: 100%;
+  color: #e0e0e0;
+}
+
+/* Project card */
+.project-card {
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin-top: 20px;
+  border-left: 4px solid var(--neon-blue);
+   border-right: 4px solid var(--neon-blue);
+
+  text-align: left;
+  width: 100%;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+
+.passport-photo {
+  width: 2in;         /* Standard passport width */
+  height: 2in;        /* Standard passport height */
+  object-fit: cover;  /* Ensures the image fills the box */
+  border-radius: 4px; /* Slight rounding for polish */
+  border: 1px solid #00f0ff; /* Neon blue border */
+  box-shadow:
+    0 0 8px rgba(17, 83, 224, 0.788),  /* Outer blue glow */
+    0 0 16px rgba(29, 109, 230, 0.76), /* Extended glow */
+    0 2px 8px rgba(14, 94, 214, 0.856);    /* Original shadow for depth */
+  transition: box-shadow 0.3s ease;
+}
+
+
+/* Contact section */
+.contact {
+  padding: 40px 20px;
+  background-color: rgba(30, 30, 30, 0.85); /* Slight transparency */
+  color: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(33, 59, 206, 0.801); /* Terminal green glow */
+  width: 100%;
+  max-width: 850px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.contact a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: var(--neon-pink);
+}
+
+/* Contact form styling */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-size: 1rem;
+  box-shadow: 0 0 6px rgba(0, 60, 255, 0.4); /* Neon blue glow */
+  transition: box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 12px var(--neon-pink), 0 0 24px var(--neon-blue);
+}
+
+/* Submit button */
+#contact-form button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--neon-blue));
+  color: black;
+  cursor: pointer;
+  box-shadow: var(--glow-shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--neon-pink), 0 0 24px var(--neon-blue);
+}
+
+/* Elias-style intro layout */
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.intro-text {
+  max-width: 600px;
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.intro-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* Code-style block */
+.code-block {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .cta-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .about,
+  .projects {
+    padding: 30px 15px;
+  }
+
+  .intro {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.875rem;
+  }
+}
