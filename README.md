@@ -13,12 +13,12 @@ Welcome to my personal portfolio! I'm an aspiring junior software developer with
 
 ##  Featured Projects
 
- Project                Description                                     
- Terraform-localstack  Infrastructure showcase using Terraform & Localstack 
- Job Track             Job application tracker with modular UI         
- Metric Pulse          Metrics dashboard with animated visualizations 
- Book Base             Book catalog app with search and filter logic  
- Mind Mesh             Mind mapping tool with dynamic node rendering   
+ Project              |  Description                                     
+ Terraform-localstack |  Infrastructure showcase using Terraform & Localstack 
+ Job Track            |  Job application tracker with modular UI         
+ Metric Pulse         |  Metrics dashboard with animated visualizations 
+ Book Base            |  Book catalog app with search and filter logic  
+ Mind Mesh            |  Mind mapping tool with dynamic node rendering   
 
 
 ##  License
