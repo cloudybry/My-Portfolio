@@ -11,9 +11,9 @@ Welcome to my personal portfolio! I'm an aspiring junior software developer with
 
 ---
 
-#  Featured Projects
+##  Featured Projects
 
-## Project Description  
+### Project Description  
  
  Terraform-localstack |  Infrastructure showcase using Terraform & Localstack 
  
