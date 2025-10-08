@@ -1,6 +1,6 @@
 # My Personal Portfolio
 
-Welcome to my personal portfolio! I'm an aspiring junior software developer with a passion for backend engineering, creative UI logic, and futuristic design. This site showcases my technical projects, visual experiments, and journey into the tech industry.
+1## Welcome to my personal portfolio! I'm an aspiring junior software developer with a passion for backend engineering, creative UI logic, and futuristic design. This site showcases my technical projects, visual experiments, and journey into the tech industry.
 
 ##  Tech Stack
 
