@@ -4,12 +4,18 @@ import PocketBase from 'pocketbase';
 const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Secure backend URL from Netlify
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -22,7 +28,7 @@ export default function ContactForm() {
       setStatus('✅ Message sent successfully!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
-      console.error(err);
+      console.error('Submission error:', err);
       setStatus('❌ Failed to send message. Please try again.');
     } finally {
       setLoading(false);
@@ -30,35 +36,68 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        value={form.name}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={form.email}
-        onChange={handleChange}
-        required
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="5"
-        value={form.message}
-        onChange={handleChange}
-        required
-      />
-      <button type="submit" disabled={loading}>
-        {loading ? 'Sending...' : 'Send Message'}
-      </button>
-      {status && <p className="form-status">{status}</p>}
-    </form>
+     <section className="contact-section">
+      <div className="contact-container">
+        <header className="contact-header">
+          <h2 className="contact-title">Connect with Me</h2>
+          <p className="contact-subtitle">
+            Got a question or opportunity? I’d love to hear from you. Send a message and I’ll respond as soon as possible.
+          </p>
+        </header>
+
+        <form onSubmit={handleSubmit} className="contact-form" noValidate>
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">Your Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">Your Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message" className="form-label">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Type your message here..."
+              rows="5"
+              value={form.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-action">
+            <button type="submit" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Message'}
+            </button>
+          </div>
+
+          {status && (
+            <div className="form-status" role="alert">
+              <p>{status}</p>
+            </div>
+          )}
+        </form>
+      </div>
+    </section>
   );
 }

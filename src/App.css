@@ -144,30 +144,98 @@ body {
 
 /* Contact section */
 
-.form-header {
-  margin-bottom: 2rem;
+.contact-section {
+  background: linear-gradient(to bottom, #3f0071, #0f0f3f);
+  padding: 4rem 2rem;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
-  color: #00ffff;
-  font-size: 1.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+.contact-title {
+  font-size: 2rem;
   font-weight: bold;
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .form-label {
   color: #00ffff;
   font-size: 1rem;
   font-weight: 500;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff99;
 }
 
 .form-action {
   text-align: center;
-  margin-top: 1rem;
+}
+
+.contact-form button {
+  background: linear-gradient(to right, #00aaff, #00ffff);
+  color: #000;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px #00ffffaa;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffffcc;
+}
+
+.contact-form button:disabled {
+  background-color: #444;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .form-status {
@@ -176,6 +244,11 @@ body {
   font-size: 1rem;
   color: #00ffcc;
   animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Elias-style intro layout */
