@@ -7,6 +7,6 @@ ADD https://github.com/pocketbase/pocketbase/releases/download/v0.30.2/pocketbas
 
 RUN chmod +x /app/pocketbase
 
-EXPOSE 10000
+EXPOSE 8090
 
-CMD ["./pocketbase", "serve", "--http", "0.0.0.0:10000"]
+CMD ["./pocketbase", "serve", "--http", "0.0.0.0:8090"]
