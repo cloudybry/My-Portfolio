@@ -2,8 +2,8 @@ FROM alpine:latest
 
 WORKDIR /app
 
-# Download PocketBase binary
-ADD https://github.com/pocketbase/pocketbase/releases/download/v0.18.4/pocketbase-linux-arm64 /app/pocketbase
+# Download PocketBase v0.30.2 binary
+ADD https://github.com/pocketbase/pocketbase/releases/download/v0.30.2/pocketbase-linux-arm64 /app/pocketbase
 
 RUN chmod +x /app/pocketbase
 
