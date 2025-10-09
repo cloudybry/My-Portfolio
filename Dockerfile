@@ -3,7 +3,7 @@ FROM alpine:latest
 WORKDIR /app
 
 # Download PocketBase v0.30.2 binary
-ADD https://github.com/pocketbase/pocketbase/releases/download/v0.30.2/pocketbase-linux-amd64 /app/pocketbase
+COPY backend/pocketbase /app/pocketbase
 
 RUN chmod +x /app/pocketbase
 
