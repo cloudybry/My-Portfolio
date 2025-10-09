@@ -145,10 +145,14 @@ body {
 /* Contact section */
 
 .contact-section {
-  background: linear-gradient(to bottom, #3f0071, #0f0f3f);
-  padding: 4rem 2rem;
-  color: #fff;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
+
+
 
 .contact-container {
   max-width: 700px;
@@ -163,7 +167,7 @@ body {
 .contact-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #00ffff;
+  color: #1b6de9f1;
   margin-bottom: 1rem;
 }
 
