@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Secure backend URL from Netlify
+const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Secure backend URL from Vercel
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -22,9 +22,14 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
     setStatus('');
+    
+  const payload = {
+      ...form,
+      submittedAt: new Date().toISOString(), // Optional: add timestamp
+    };
 
     try {
-      await pb.collection('contacts').create(form);
+      await pb.collection('contacts').create(payload);
       setStatus('✅ Message sent successfully!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
@@ -34,6 +39,7 @@ export default function ContactForm() {
       setLoading(false);
     }
   };
+
 
   return (
      <section className="contact-section">

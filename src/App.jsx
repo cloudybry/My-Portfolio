@@ -1,13 +1,31 @@
 // src/App.js
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import './App.css';
 import PocketBase from 'pocketbase';
 import ContactForm from './ContactForm';
 
 
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Use Netlify env variable
+import React, { useEffect, useState } from 'react';
+import PocketBase from 'pocketbase';
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+  const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Vercel env variable
+
+ useEffect(() => {
+  async function fetchContacts() {
+    try {
+      const records = await pb.collection('contacts').getFullList();
+      setContacts(records);
+    } catch (err) {
+      console.error("PocketBase error:", err);
+    }
+  }
+
+  fetchContacts();
+}, []);
+
+
   return (
     <div className="container">
       {/* Hero Section */}
