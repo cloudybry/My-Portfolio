@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Secure backend URL from Vercel
+const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -18,14 +18,32 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateForm = () => {
+    const emailValid = form.email.includes('@') && form.email.includes('.');
+    return (
+      form.name.trim() !== '' &&
+      form.email.trim() !== '' &&
+      emailValid &&
+      form.message.trim() !== ''
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus('');
-    
-  const payload = {
-      ...form,
-      submittedAt: new Date().toISOString(), // Optional: add timestamp
+
+    if (!validateForm()) {
+      setStatus('❌ Please fill out all fields correctly.');
+      setLoading(false);
+      return;
+    }
+
+    const payload = {
+      Name: form.name,
+      Email: form.email,
+      Message: form.message,
+      submittedAt: new Date().toISOString(),
     };
 
     try {
