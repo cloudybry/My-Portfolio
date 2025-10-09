@@ -1,6 +1,11 @@
 // src/App.js
 import React from 'react';
 import './App.css';
+import PocketBase from 'pocketbase';
+import ContactForm from './ContactForm';
+
+
+const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Use Netlify env variable
 
 function App() {
   return (
@@ -9,7 +14,7 @@ function App() {
 <header className="hero">
   <div className="hero-content">
     <div className="hero-image">
-      <img src="/me.png" alt="Bryan Portrait" class="passport-photo" />
+      <img src="/me.png" alt="Bryan Portrait" className="passport-photo" />
     </div>
     <div className="hero-text">
       <h1 className="title">Bryan John Berzabal</h1>
@@ -62,13 +67,10 @@ function App() {
 
       </section>
       {/* Contact Section */}
- <section class="contact">
+ <section className="contact">
   <h2>Connect with Me</h2>
   <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
+    <ContactForm />
   </form>
 </section>
     </div>
