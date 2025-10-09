@@ -33,6 +33,21 @@ export default function ContactForm() {
     setLoading(true);
     setStatus('');
 
+    const isValid =
+    form.name.trim() !== "" &&
+    form.email.includes("@") &&
+    form.email.includes(".") &&
+    form.message.trim() !== "";
+
+  if (!isValid) {
+    setStatus("❌ Please fill out all fields correctly.");
+    setLoading(false);
+    return;
+  }
+
+
+
+
     if (!validateForm()) {
       setStatus('❌ Please fill out all fields correctly.');
       setLoading(false);
