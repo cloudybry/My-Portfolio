@@ -15,4 +15,4 @@ ENV PORT=10000
 EXPOSE $PORT
 
 # Start PocketBase using the dynamic port
-CMD ["./pocketbase", "serve", "--http", "0.0.0.0:$PORT"]
+CMD ./pocketbase serve --http=0.0.0.0:$PORT
