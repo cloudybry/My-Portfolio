@@ -4,10 +4,6 @@ import './App.css';
 import PocketBase from 'pocketbase';
 import ContactForm from './ContactForm';
 
-
-import React, { useEffect, useState } from 'react';
-import PocketBase from 'pocketbase';
-
 function App() {
   const [contacts, setContacts] = useState([]);
   const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL); // Vercel env variable
