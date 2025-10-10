@@ -57,11 +57,19 @@ body {
 
 /* Hero section */
 .hero {
-  padding: 60px 20px;
-  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  height: 100vh;
+  background: linear-gradient(to right, #0f0f2f, #1a1a3d); /* Dark cyberpunk gradient */
+  padding-left: 5vw;
+  color: #00ffff; /* Neon accent */
 }
 
+
+
 .title {
+  display: flex;
+  justify-content: flex-start; 
   font-size: 3rem;
   margin-bottom: 10px;
   color: var(--accent-purple);
@@ -70,6 +78,7 @@ body {
 .subtitle {
   font-size: 1.25rem;
   color: #ccc;
+  text-align: left;
 }
 
 /* Call-to-action button */
