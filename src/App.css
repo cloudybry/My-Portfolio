@@ -36,9 +36,9 @@ body {
 /* Centered container */
 .container {
   width: 100%;
-  max-width: 5000px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1000px;
+  margin: 1rem 6rem;
+  padding: 1rem 2rem;
   background-color: #121212;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(197, 176, 176, 0.171);
@@ -72,7 +72,8 @@ body {
 .hero-section {
   background-color: #1e1e1e;
   color: #ffffff;
-  padding: 6rem 2rem;
+  padding: 1rem 1rem;
+  margin: 10px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -277,7 +278,7 @@ body {
 
 .contact-section {
   background-color: #1e1e1e;
-  padding: 20px;
+  padding: 4rem 7rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   text-align: center;
