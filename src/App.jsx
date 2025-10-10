@@ -56,11 +56,11 @@ function Home() {
 
 function Projects() {
   const projectList = [
-    { src: "/terraform.jpg", title: "Terraform-localstock showcase", link: "https://github.com/cloudybry/Terraform-localstack-showcase" },
-    { src: "/jobtrack.png", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
-    { src: "/metricpulse.png", title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
-    { src: "/bookbase.jpg", title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
-    { src: "/MindMesh.png", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
+    { src: "/terraform.jpg", alt:"terraform", title: "Terraform-localstock showcase", link: "https://github.com/cloudybry/Terraform-localstack-showcase" },
+    { src: "/jobtrack.png",alt:"jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
+    { src: "/metricpulse.png", alt:"metricpulse" ,title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
+    { src: "/bookbase.jpg", alt:"bookbase",title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
+    { src: "/MindMesh.png", alt: "mindmesh", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
   ];
 
   return (
