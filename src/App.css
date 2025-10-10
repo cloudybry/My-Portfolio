@@ -162,6 +162,25 @@ body {
   transform: scale(1.1);
 }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 0 4px #1a7be9);
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+
 
 .social-buttons {
   display: flex;
