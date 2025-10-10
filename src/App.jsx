@@ -38,7 +38,7 @@ function App() {
         <a href="#projects" className="cta-button unified-button">Explore My Work &gt;</a>
 
         <div className="hero-right">
-        <img src="" alt="my-portrait" className="hero-photo" onError={(e) => (e.target.style.display = 'none')} />
+        <img src="public\me.png" alt="my-portrait" className="hero-photo" onError={(e) => (e.target.style.display = 'none')} />
 
         </div>
         </div>
