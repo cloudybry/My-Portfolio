@@ -30,27 +30,19 @@ function App() {
   return (
     <div className="container">
       {/* Hero Section */}
-      <header className="hero">
-        <div className="hero-content">
-          <div className="hero-image">
-            <img src="/me.png" alt="Bryan Portrait" className="passport-photo" />
-          </div>
-          <div className="hero-text">
-            <h1 className="title">Bryan John Berzabal</h1>
-            <p className="subtitle">Aspiring Junior Software Developer</p>
-            <p className="subtitle">Philippines</p>
-            <a href="#projects" className="cta-button">Explore My Work</a>
-          </div>
-        </div>
-      </header>
+      <header className="hero unified-hero">
+        <div className="hero-left">
+          <h1 className="hero-title">Bryan John Berzabal</h1>
+           <p className="hero-intro">Aspiring Junior Software Developer Based in the Philippines and passionate about Cloud.</p>
+          
+        <a href="#projects" className="cta-button unified-button">Explore My Work &gt;</a>
 
-      {/* About Section */}
-      <section className="about">
-        <h2>About Me</h2>
-        <p>
-          I’m a fresh graduate with a Bachelor of Science in Information Technology from Philippine Christian University, driven by a strong passion for software development and cloud computing. I’m eager to learn, grow, and contribute meaningfully to the tech industry — bringing curiosity, resilience, and a commitment to continuous improvement.
-        </p>
-      </section>
+        <div className="hero-right">
+        <img src="" alt="my-portrait" className="hero-photo" onError={(e) => (e.target.style.display = 'none')} />
+
+        </div>
+        </div>
+        </header>
 
       {/* Projects Section */}
       <section id="projects" className="projects">

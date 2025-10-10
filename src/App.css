@@ -48,6 +48,83 @@ body {
   text-align: center;
 }
 
+/* Base layout */
+.unified-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  color: #222222;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .unified-hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Left section */
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111111;
+}
+
+.hero-intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 2rem;
+}
+
+/* CTA button */
+.unified-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.unified-button:hover {
+  background-color: #0056b3;
+}
+
+/* Right section */
+.hero-right {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-right {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+}
+
+.hero-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
+}
+
 /* Shift container slightly to the right on desktop screens */
 @media (min-width: 1024px) {
   .container {
@@ -55,6 +132,7 @@ body {
   }
 }
 
+<<<<<<< HEAD
 /* Hero section */
 /* Unified Hero Section */
 .unified-hero {
@@ -141,6 +219,8 @@ body {
     transform: translateX(400px);
   }
 }
+=======
+>>>>>>> cd5438defd607cd751fb4962fe69133005179ff7
 
 
 
@@ -174,20 +254,6 @@ body {
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-
-.passport-photo {
-  width: 2in;         /* Standard passport width */
-  height: 2in;        /* Standard passport height */
-  object-fit: cover;  /* Ensures the image fills the box */
-  border-radius: 4px; /* Slight rounding for polish */
-  border: 1px solid #00f0ff; /* Neon blue border */
-  box-shadow:
-    0 0 8px rgba(17, 83, 224, 0.788),  /* Outer blue glow */
-    0 0 16px rgba(29, 109, 230, 0.76), /* Extended glow */
-    0 2px 8px rgba(14, 94, 214, 0.856);    /* Original shadow for depth */
-  transition: box-shadow 0.3s ease;
 }
 
 
