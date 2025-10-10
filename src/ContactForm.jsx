@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
+const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL;
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -33,26 +33,19 @@ export default function ContactForm() {
     setLoading(true);
     setStatus('');
 
-    const isValid =
-    form.name.trim() !== "" &&
-    form.email.includes("@") &&
-    form.email.includes(".") &&
-    form.message.trim() !== "";
-
-  if (!isValid) {
-    setStatus("❌ Please fill out all fields correctly.");
-    setLoading(false);
-    return;
-  }
-
-
-
+    if (!pocketbaseUrl) {
+      setStatus('❌ Backend URL is missing. Please check your environment config.');
+      setLoading(false);
+      return;
+    }
 
     if (!validateForm()) {
       setStatus('❌ Please fill out all fields correctly.');
       setLoading(false);
       return;
     }
+
+    const pb = new PocketBase(pocketbaseUrl);
 
     const payload = {
       Name: form.name,
@@ -73,9 +66,8 @@ export default function ContactForm() {
     }
   };
 
-
   return (
-     <section className="contact-section">
+    <section className="contact-section" aria-label="Contact Form">
       <div className="contact-container">
         <header className="contact-header">
           <h2 className="contact-title">Connect with Me</h2>
@@ -131,7 +123,7 @@ export default function ContactForm() {
           </div>
 
           {status && (
-            <div className="form-status" role="alert">
+            <div className="form-status" role="status">
               <p>{status}</p>
             </div>
           )}
