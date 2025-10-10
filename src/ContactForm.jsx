@@ -34,7 +34,7 @@ export default function ContactForm() {
     setStatus('');
 
     if (!pocketbaseUrl) {
-      setStatus('❌ Backend URL is missing. Please check your environment config.');
+      setStatus('❌ Backend URL is missing. Check your .env config.');
       setLoading(false);
       return;
     }
@@ -48,9 +48,9 @@ export default function ContactForm() {
     const pb = new PocketBase(pocketbaseUrl);
 
     const payload = {
-      Name: form.name,
-      Email: form.email,
-      Message: form.message,
+      name: form.name,
+      email: form.email,
+      message: form.message,
       submittedAt: new Date().toISOString(),
     };
 
@@ -72,7 +72,7 @@ export default function ContactForm() {
         <header className="contact-header">
           <h2 className="contact-title">Connect with Me</h2>
           <p className="contact-subtitle">
-            Got a question or opportunity? I’d love to hear from you. Send a message and I’ll respond as soon as possible.
+            Got a question or opportunity? I’d love to hear from you.
           </p>
         </header>
 
@@ -123,7 +123,15 @@ export default function ContactForm() {
           </div>
 
           {status && (
-            <div className="form-status" role="status">
+            <div
+              className="form-status"
+              role="status"
+              style={{
+                marginTop: '1rem',
+                color: status.startsWith('✅') ? '#00ff99' : '#ff4d4d',
+                fontWeight: 'bold',
+              }}
+            >
               <p>{status}</p>
             </div>
           )}
