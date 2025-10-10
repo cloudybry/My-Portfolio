@@ -26,7 +26,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="icon-button"
               >
-                <img src="/facebook.png" alt="Facebook" className="social-icon" />
+                <img src="/facebook.svg" alt="Facebook" className="social-icon" />
               </a>
 
               <a
@@ -35,7 +35,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="icon-button"
               >
-                <img src="/github.png" alt="GitHub" className="social-icon" />
+                <img src="/github.svg" alt="GitHub" className="social-icon" />
               </a>
             </div>
           </div>
@@ -56,11 +56,11 @@ function Home() {
 
 function Projects() {
   const projectList = [
-    { src: "/terraform.jpg", alt:"terraform", title: "Terraform-localstock showcase", link: "https://github.com/cloudybry/Terraform-localstack-showcase" },
-    { src: "/jobtrack.png",alt:"jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
-    { src: "/metricpulse.png", alt:"metricpulse" ,title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
-    { src: "/bookbase.jpg", alt:"bookbase",title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
-    { src: "/MindMesh.png", alt: "mindmesh", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
+    { src: "/terraform.jpg", alt:"Terraform", title: "Terraform-localstock Showcase", link: "https://github.com/cloudybry/Terraform-localstack-showcase" },
+    { src: "/jobtrack.png",alt:"Jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
+    { src: "/metricpulse.png", alt:"Metricpulse" ,title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
+    { src: "/bookbase.jpg", alt:"Bookbase",title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
+    { src: "/mindMesh.png", alt: "Mindmesh", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
   ];
 
   return (
