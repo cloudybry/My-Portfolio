@@ -1,2 +1,3 @@
 #!/bin/bash
-./pocketbase serve --http:0.0.0.0:8080
+chmod +x pocketbase
+./pocketbase serve 
