@@ -1,2 +1,2 @@
-#!/bin/bash
-./pocketbase serve 
+#!/bin/sh
+./pocketbase serve
