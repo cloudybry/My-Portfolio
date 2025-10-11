@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import ContactForm from './ContactForm';
-import pb, { loginAdmin } from './auth';
+
+
 
 function Home() {
   return (
@@ -75,52 +76,14 @@ function Contact() {
     <section className="contact">
       
         <h2>Connect with Me</h2>
-        <form id="contact-form">
+        <div id="contact-form">
           <ContactForm />
-        </form>
+        </div>
       
     </section>
   );
 }
 
-function AdminContacts() {
-  const [contacts, setContacts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const init = async () => {
-      try {
-        await loginAdmin();
-        const records = await pb.collection('contacts').getFullList();
-        setContacts(records);
-        console.log('✅ Fetched contacts:', records);
-      } catch (err) {
-        console.error('❌ PocketBase error:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    init();
-  }, []);
-
-  return (
-    <section className="contacts">
-
-        <h2>Contact Submissions</h2>
-        {loading ? (
-          <p>Loading contacts...</p>
-        ) : (
-          <ul>
-            {contacts.map((contact) => (
-              <li key={contact.id}>{contact.name}</li>
-            ))}
-          </ul>
-        )}
-      
-    </section>
-  );
-}
 
 function App() {
   return (
@@ -131,7 +94,7 @@ function App() {
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/projects" className="nav-link">Projects</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
-          <Link to="/admin" className="nav-link">Admin</Link>
+          
         
       </nav>
 
@@ -139,7 +102,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<AdminContacts />} />
+       
       </Routes>
       </div>
     </Router>
