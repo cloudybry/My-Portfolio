@@ -21,8 +21,8 @@ function Home() {
               <Link to="/projects" className="cta-button">Explore My Work &gt;</Link>
 
               <div className="social-buttons">
-                <a href="https://www.facebook.com/bryanberzbal" target="_blank" rel="noopener noreferrer" className="icon-button">
-                  <img src="/facebook.svg" alt="Facebook" className="social-icon" />
+                <a href="https://www.linkedin.com/in/bryanberzabal/" target="_blank" rel="noopener noreferrer" className="icon-button">
+                  <img src="/linkedin.svg" alt="Linkedin" className="social-icon" />
                 </a>
                 <a href="https://github.com/cloudybry" target="_blank" rel="noopener noreferrer" className="icon-button">
                   <img src="/github.svg" alt="GitHub" className="social-icon" />
