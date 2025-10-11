@@ -13,20 +13,24 @@ export default function ContactForm() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setForm((prevForm) => ({
+    ...prevForm,
+    [name]: value,
+  }));
+};
 
-  const validateForm = () => {
-    const emailValid = form.email.includes('@') && form.email.includes('.');
-    return (
-      form.name.trim() !== '' &&
-      form.email.trim() !== '' &&
-      emailValid &&
-      form.message.trim() !== ''
-    );
-  };
+// ✅ Validation function
+const validateForm = () => {
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email); // stronger email check
+  return (
+    form.name.trim() !== '' &&
+    form.email.trim() !== '' &&
+    emailValid &&
+    form.message.trim() !== ''
+  );
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,19 +51,18 @@ export default function ContactForm() {
 
     const pb = new PocketBase(pocketbaseUrl);
 
-    const payload = {
-      name: form.name,
-      email: form.email,
-      message: form.message,
-      submittedAt: new Date().toISOString(),
-    };
-
     try {
-      await pb.collection('contacts').create(payload);
+      await pb.collection('contacts').create({
+        name: form.name,
+        email: form.email,
+        message: form.message,
+        submittedAt: new Date().toISOString(), // optional
+
+      });
       setStatus('✅ Message sent successfully!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
-      console.error('Submission error:', err);
+      console.error('❌ Submission error:', err);
       setStatus('❌ Failed to send message. Please try again.');
     } finally {
       setLoading(false);
