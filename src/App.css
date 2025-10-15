@@ -37,7 +37,7 @@ body {
 .container {
   width: 100%;
   max-width: 1000px;
-  margin: 1rem 6rem;
+  margin: 1rem;
   padding: 1rem 2rem;
   background-color: #121212;
   border-radius: 12px;
@@ -237,7 +237,7 @@ body {
 /* Optional: Shift container on desktop */
 @media (min-width: 1024px) {
   .container {
-    transform: translateX(400px);
+    transform: translateX(200px);
   }
 }
 
