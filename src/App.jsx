@@ -48,7 +48,6 @@ function Home() {
 
 function Projects() {
   const projectList = [
-    { src: "/terraform.jpg", alt: "Terraform", title: "Terraform-localstock Showcase", link: "https://github.com/cloudybry/Terraform-localstack-showcase" },
     { src: "/jobtrack.png", alt: "Jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
     { src: "/metricpulse.png", alt: "Metricpulse", title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
     { src: "/bookbase.jpg", alt: "Bookbase", title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
