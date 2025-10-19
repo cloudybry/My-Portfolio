@@ -48,7 +48,7 @@ function Home() {
 
 function Projects() {
   const projectList = [
-    { src: "/jobtrack.png", alt: "Jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
+   { src: "/jobtrack.png", alt: "Jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
     { src: "/metricpulse.png", alt: "Metricpulse", title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
     { src: "/bookbase.jpg", alt: "Bookbase", title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
     { src: "/mindmesh.png", alt: "Mindmesh", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
