@@ -75,25 +75,14 @@ function Projects() {
   ];
 
   return (
-    <section className="projects">
-      <h2>Projects</h2>
+    <div className="projects">
       {projectList.map((project, index) => (
-        <div className="project-card" key={index}>
-          <img
-            src={project.src}
-            alt={project.alt}
-            className="project-image"
-            onError={(e) => {
-              e.target.src = "/fallback.png"; // Optional fallback image
-            }}
-          />
+        <a key={index} href={project.link} target="_blank" rel="noopener noreferrer">
+          <img src={project.src} alt={project.alt} />
           <h3>{project.title}</h3>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </a>
-        </div>
+        </a>
       ))}
-    </section>
+    </div>
   );
 }
 
