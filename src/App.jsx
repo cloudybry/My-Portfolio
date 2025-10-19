@@ -48,24 +48,51 @@ function Home() {
 
 function Projects() {
   const projectList = [
-   { src: "/jobtrack.png", alt: "Jobtrack", title: "Job Track", link: "https://github.com/cloudybry/JobTrack" },
-    { src: "/metricpulse.png", alt: "Metricpulse", title: "Metric Pulse", link: "https://github.com/cloudybry/Metricpulse" },
-    { src: "/bookbase.jpg", alt: "Bookbase", title: "Book Base", link: "https://github.com/cloudybry/BookBase" },
-    { src: "/mindmesh.png", alt: "Mindmesh", title: "Mind Mesh", link: "https://github.com/cloudybry/Mindmesh" },
+    {
+      src: "/jobtrack.png",
+      alt: "Jobtrack",
+      title: "Job Track",
+      link: "https://github.com/cloudybry/JobTrack",
+    },
+    {
+      src: "/metricpulse.png",
+      alt: "Metricpulse",
+      title: "Metric Pulse",
+      link: "https://github.com/cloudybry/Metricpulse",
+    },
+    {
+      src: "/bookbase.jpg",
+      alt: "Bookbase",
+      title: "Book Base",
+      link: "https://github.com/cloudybry/BookBase",
+    },
+    {
+      src: "/mindmesh.png",
+      alt: "Mindmesh",
+      title: "Mind Mesh",
+      link: "https://github.com/cloudybry/Mindmesh",
+    },
   ];
 
   return (
     <section className="projects">
-      
-        <h2>Projects</h2>
-        {projectList.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img src={project.src} alt={project.title} className="project-image" />
-            <h3>{project.title}</h3>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        ))}
-      
+      <h2>Projects</h2>
+      {projectList.map((project, index) => (
+        <div className="project-card" key={index}>
+          <img
+            src={project.src}
+            alt={project.alt}
+            className="project-image"
+            onError={(e) => {
+              e.target.src = "/fallback.png"; // Optional fallback image
+            }}
+          />
+          <h3>{project.title}</h3>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        </div>
+      ))}
     </section>
   );
 }
