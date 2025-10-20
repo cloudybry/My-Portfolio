@@ -1,47 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import ContactForm from './ContactForm';
 
-
-
 function Home() {
   return (
     <header className="hero-section">
-      
-        <div className="hero-content">
-          <div className="hero-left">
-            <div className="hero-text-horizontal">
-              <h1 className="hero-title">Bryan John Berzabal</h1>
-              <p className="hero-intro">
-                Aspiring Junior Software Developer based in the Philippines and passionate about Cloud.
-              </p>
-            </div>
-
-            <div className="hero-button-wrapper">
-              <Link to="/projects" className="cta-button">Explore My Work &gt;</Link>
-
-              <div className="social-buttons">
-                <a href="https://www.linkedinn.com/in/bryanberzabal/" target="_blank" rel="noopener noreferrer" className="icon-button">
-                  <img src="/linkedin.svg" alt="Linkedin" className="social-icon" />
-                </a>
-                <a href="https://github.com/cloudybry" target="_blank" rel="noopener noreferrer" className="icon-button">
-                  <img src="/github.svg" alt="GitHub" className="social-icon" />
-                </a>
-              </div>
-            </div>
+      <div className="hero-content">
+        <div className="hero-left">
+          <div className="hero-text-horizontal">
+            <h1 className="hero-title">Bryan John Berzabal</h1>
+            <p className="hero-intro">
+              Aspiring Junior Software Developer based in the Philippines and passionate about Cloud.
+            </p>
           </div>
 
-          <div className="hero-right">
-            <img
-              src="/me.png"
-              alt="my-portrait"
-              className="hero-photo"
-              onError={(e) => (e.target.style.display = 'none')}
-            />
+          <div className="hero-button-wrapper">
+            <Link to="/projects" className="cta-button">Explore My Work &gt;</Link>
+
+            <div className="social-buttons">
+              <a href="https://www.linkedin.com/in/bryanberzabal/" target="_blank" rel="noopener noreferrer" className="icon-button">
+                <img src="/linkedin.svg" alt="Linkedin" className="social-icon" />
+              </a>
+              <a href="https://github.com/cloudybry" target="_blank" rel="noopener noreferrer" className="icon-button">
+                <img src="/github.svg" alt="GitHub" className="social-icon" />
+              </a>
+            </div>
           </div>
         </div>
-      
+
+        <div className="hero-right">
+          <img
+            src="/me.png"
+            alt="my-portrait"
+            className="hero-photo"
+            onError={(e) => (e.target.style.display = 'none')}
+          />
+        </div>
+      </div>
     </header>
   );
 }
@@ -56,16 +52,14 @@ function Projects() {
 
   return (
     <section className="projects">
-      
-        <h2>Projects</h2>
-        {projectList.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img src={project.src} alt={project.title} className="project-image" />
-            <h3>{project.title}</h3>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        ))}
-      
+      <h2>Projects</h2>
+      {projectList.map((project, index) => (
+        <div className="project-card" key={index}>
+          <img src={project.src} alt={project.title} className="project-image" />
+          <h3>{project.title}</h3>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      ))}
     </section>
   );
 }
@@ -73,36 +67,29 @@ function Projects() {
 function Contact() {
   return (
     <section className="contact">
-      
-        <h2>Connect with Me</h2>
-        <div id="contact-form">
-          <ContactForm />
-        </div>
-      
+      <h2>Connect with Me</h2>
+      <div id="contact-form">
+        <ContactForm />
+      </div>
     </section>
   );
 }
 
-
 function App() {
   return (
     <Router>
-       <div className="container">
-      <nav className="navbar">
-       
+      <div className="container">
+        <nav className="navbar">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/projects" className="nav-link">Projects</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
-          
-        
-      </nav>
+        </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-       
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </Router>
   );
