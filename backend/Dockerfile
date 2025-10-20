@@ -9,4 +9,4 @@ RUN chmod +x /app/pocketbase /app/start.sh
 
 EXPOSE 8090
 
-CMD ["./start.sh"]
+CMD ./start.sh
