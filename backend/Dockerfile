@@ -18,7 +18,7 @@ RUN curl -L -o pocketbase.zip https://github.com/pocketbase/pocketbase/releases/
     && rm -rf pocketbase.zip /tmp/pb
 
 
-COPY scripts/start.sh /app/start.sh
+COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 EXPOSE 8090
