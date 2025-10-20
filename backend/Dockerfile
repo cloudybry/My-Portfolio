@@ -17,7 +17,7 @@ RUN curl -L -o pocketbase.zip https://github.com/pocketbase/pocketbase/releases/
     && chmod +x /app/pocketbase \
     && rm pocketbase.zip
 
-# Copy and prepare startup script
+
 COPY start.sh /app/start.sh
 
 # Ensure correct line endings and permissions
@@ -25,5 +25,4 @@ RUN sed -i 's/\r$//' /app/start.sh && chmod +x /app/start.sh
 
 EXPOSE 8090
 
-# Use CMD for flexibility (especially on platforms like Railway)
 CMD ["/app/start.sh"]
