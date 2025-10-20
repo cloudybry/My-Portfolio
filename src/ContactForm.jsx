@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PocketBase from 'pocketbase';
 
-const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL;
+const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL || 'http://127.0.0.1:8090';
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -13,24 +13,23 @@ export default function ContactForm() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setForm((prevForm) => ({
-    ...prevForm,
-    [name]: value,
-  }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
 
-// ✅ Validation function
-const validateForm = () => {
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email); // stronger email check
-  return (
-    form.name.trim() !== '' &&
-    form.email.trim() !== '' &&
-    emailValid &&
-    form.message.trim() !== ''
-  );
-};
+  const validateForm = () => {
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+    return (
+      form.name.trim() !== '' &&
+      form.email.trim() !== '' &&
+      emailValid &&
+      form.message.trim() !== ''
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,20 +49,21 @@ const validateForm = () => {
     }
 
     const pb = new PocketBase(pocketbaseUrl);
+    console.log('Submitting to:', pocketbaseUrl);
 
     try {
       await pb.collection('contacts').create({
         name: form.name,
         email: form.email,
         message: form.message,
-        submittedAt: new Date().toISOString(), // optional
-
+        submittedAt: new Date().toISOString(),
       });
+
       setStatus('✅ Message sent successfully!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
       console.error('❌ Submission error:', err);
-      setStatus('❌ Failed to send message. Please try again.');
+      setStatus(`❌ ${err.message || 'Failed to send message. Please try again.'}`);
     } finally {
       setLoading(false);
     }
