@@ -1,15 +1,25 @@
-FROM alpine:latest
+FROM debian:bullseye-slim
 
 WORKDIR /app
-RUN apk add --no-cache wget unzip
 
-RUN wget https://github.com/pocketbase/pocketbase/releases/download/v0.30.4/pocketbase_0.30.4_linux_amd64.zip \
-    && unzip pocketbase_0.30.4_linux_amd64.zip \
-    && mv pocketbase /app/pocketbase \
-    && chmod +x /app/pocketbase
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    unzip \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install PocketBase
+RUN curl -L -o pocketbase.zip https://github.com/pocketbase/pocketbase/releases/download/v0.30.4/pocketbase_0.30.4_linux_amd64.zip \
+    && mkdir /tmp/pb \
+    && unzip pocketbase.zip -d /tmp/pb \
+    && mv /tmp/pb/pocketbase /app/pocketbase \
+    && chmod +x /app/pocketbase \
+    && rm -rf pocketbase.zip /tmp/pb
+
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 EXPOSE 8090
-CMD ./start.sh
+ENTRYPOINT ["/app/start.sh"]
