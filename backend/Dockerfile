@@ -2,10 +2,13 @@ FROM alpine:latest
 
 WORKDIR /app
 
+# Install required packages and ensure shell compatibility
 RUN apk add --no-cache \
     unzip \
     curl \
-    ca-certificates
+    ca-certificates \
+    busybox \
+    bash
 
 # Download and install PocketBase
 ENV PB_VERSION=0.30.4
@@ -14,9 +17,13 @@ RUN curl -L -o pocketbase.zip https://github.com/pocketbase/pocketbase/releases/
     && chmod +x /app/pocketbase \
     && rm pocketbase.zip
 
-# Copy startup script
+# Copy and prepare startup script
 COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+
+# Ensure correct line endings and permissions
+RUN sed -i 's/\r$//' /app/start.sh && chmod +x /app/start.sh
 
 EXPOSE 8090
-ENTRYPOINT ["/app/start.sh"]
+
+# Use CMD for flexibility (especially on platforms like Railway)
+CMD ["/app/start.sh"]
