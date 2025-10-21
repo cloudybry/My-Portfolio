@@ -1,4 +1,13 @@
 node_modules/
 dist/
-pocketbase.exe
-.env
+# PocketBase binary (if compiled locally)
+pocketbase
+
+# Shell script (if it's machine-specific or temporary)
+start.sh
+
+# Backup folder (often contains sensitive or large files)
+backups/
+
+# Dockerfile (only if you're not using Docker at all)
+Dockerfile
