@@ -5,9 +5,8 @@
 ##  Tech Stack
 
 - **Frontend**: React + Vite, CSS, Bootstrap
-- **Backend-ready**: Firebase (contact form integration in progress)
-- **Design Language**: Cyberpunk-inspired UI with animated GIF backgrounds
-- **Deployment**: Netlify
+- **Backend**: PocketBase
+- **Deployment**: Vercel(But i stopped using it)
 
 ---
 
