@@ -15,9 +15,7 @@
 
 ### Project Description  
  
- Terraform-localstack  
-       
-        Infrastructure showcase using Terraform & Localstack 
+
  
  Job Track            
        
